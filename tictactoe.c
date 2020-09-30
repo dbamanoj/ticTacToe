@@ -1,15 +1,16 @@
 #include<stdio.h>
 
-char matrix[3][3], player1[30], player2[30];
+char matrix[3][3], player1[50], player2[50];
 
 
-void getDetails(void);
-char check(void);
-void initMatrix(void);
-void displayMatrix(void);
-void getPlayer1Move(void);
-void getPlayer2Move(void);
-void geo(void);
+void getDetails();
+char check();
+void initMatrix();
+void displayMatrix();
+void getPlayer1Move();
+void getPlayer2Move();
+void geo();
+
 int main(){
     geo();
     return 0;
@@ -17,7 +18,7 @@ int main(){
 
 /* geo definition */
 void geo(void){
-    printf("This is Tic Tac Toe Game...\n");
+    printf(" ~~~~  Tic Tac Toe Game  ~~~\n");
     getDetails();
     char done = ' ';
     initMatrix();
@@ -34,10 +35,10 @@ void geo(void){
     }while(done==' ');
     if(done == 'X'){
         displayMatrix();
-        printf("%s won!\n",player1);
+        printf("\n %s won!\n",player1);
     }else{
         displayMatrix();
-        printf("%s won!\n", player2);
+        printf("\n %s won!\n", player2);
     }
     
 
@@ -46,9 +47,9 @@ void geo(void){
 
 /* Get Details of Players */
 void getDetails(void){
-    printf("Enter Player1 Details: ");
+    printf("\n Enter Player1 Details: ");
     scanf("%s",player1);
-    printf("Enter Player2 Details:");
+    printf("\n Enter Player2 Details:");
     scanf("%s",player2);
 }
 
@@ -68,11 +69,11 @@ void initMatrix(void){
 /* Get player1 move */
 void getPlayer1Move(void){
     int x, y;
-    printf("%s Enter X,Y Co-Ordinates of your move: ", player1);
+    printf("\n %s Enter ( X,Y ) Co-Ordinates of your move: ", player1);
     scanf("%d %d", &x, &y);
     x--, y--;
     if(matrix[x][y] != ' '){
-        printf("Invalid choice!");
+        printf("Invalid Move!");
         getPlayer1Move();
     }else
     {
@@ -85,11 +86,11 @@ void getPlayer1Move(void){
 /* Get player2 move */
 void getPlayer2Move(void){
     int x, y;
-    printf("%s Enter X,Y Co-Ordinates of your move: ", player2);
+    printf("\n %s Enter X,Y Co-Ordinates of your move: ", player2);
     scanf("%d %d", &x, &y);
     x--, y--;
     if(matrix[x][y] != ' '){
-        printf("Invalid choice!");
+        printf("Invalid Move!");
         getPlayer1Move();
     }else
     {
